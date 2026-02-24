@@ -1,0 +1,863 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.60.2)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Fairy", "FairyPlasticRed", "FairyPlasticOrange", "FairyPlasticYellow", "FairyPlasticGreen", "FairyPlasticCyan", "FairyPlasticPurple", "FairyPlasticPink", "FairyPlasticSkin", "FairyPlasticHair"]
+    def "Fairy" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (-1.5707964, 0, 0)
+        }
+        references = @fairy.usdc@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "fairy_001"
+        {
+            quatf xformOp:orient = (0.7071068, 0.7071067, 0, 0)
+            float3 xformOp:scale = (0.01, 0.01, 0.01)
+            double3 xformOp:translate = (-1.5716071288807143e-7, -0.0000011068323146901093, -3.600203037261963)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "upper"
+            {
+                over "body_pivot"
+                {
+                    over "body"
+                    {
+                        over "body" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticRed> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "arms"
+                {
+                    over "shoulder_right"
+                    {
+                        over "bicep_right"
+                        {
+                            over "Mesh_014" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPink> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+
+                            over "elbow_right_pivot"
+                            {
+                                over "forearm_right"
+                                {
+                                    over "Mesh_015" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Root/FairyPlasticPink> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                    }
+
+                                    over "wrist_right_pivot"
+                                    {
+                                        over "hand_right"
+                                        {
+                                            over "Mesh_016" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Root/FairyPlasticSkin> (
+                                                    bindMaterialAs = "weakerThanDescendants"
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    over "shoulder_left_pivot"
+                    {
+                        over "bicep_left"
+                        {
+                            over "Mesh_017" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPink> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+
+                            over "elbow_left_pivot"
+                            {
+                                over "forearm_left"
+                                {
+                                    over "Mesh_018" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Root/FairyPlasticPink> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                    }
+
+                                    over "wrist_left_pivot"
+                                    {
+                                        over "hand_left"
+                                        {
+                                            over "Mesh_019" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Root/FairyPlasticSkin> (
+                                                    bindMaterialAs = "weakerThanDescendants"
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "head"
+                {
+                    over "head" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Root/FairyPlasticSkin> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                    }
+
+                    over "hair_pivot"
+                    {
+                        over "hair"
+                        {
+                            over "Mesh_013" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticHair> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "dress"
+            {
+                over "dress_pivot_1"
+                {
+                    over "dress_1"
+                    {
+                        over "Mesh_006" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticOrange> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_2"
+                {
+                    over "dress_2"
+                    {
+                        over "Mesh_005" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticYellow> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_3"
+                {
+                    over "dress_3"
+                    {
+                        over "Mesh_004" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticGreen> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_4"
+                {
+                    over "dress_4"
+                    {
+                        over "Mesh_003" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticCyan> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_5"
+                {
+                    over "dress_5"
+                    {
+                        over "Mesh_002" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticPurple> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_6"
+                {
+                    over "dress_6"
+                    {
+                        over "Mesh_001" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticRed> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_7"
+                {
+                    over "dress_7"
+                    {
+                        over "Mesh" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticOrange> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_8"
+                {
+                    over "dress_8"
+                    {
+                        over "Mesh_011" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticYellow> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_9"
+                {
+                    over "dress_9"
+                    {
+                        over "Mesh_010" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticGreen> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_10"
+                {
+                    over "dress_10"
+                    {
+                        over "Mesh_009" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticCyan> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_11"
+                {
+                    over "dress_11"
+                    {
+                        over "Mesh_008" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticPurple> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+
+                over "dress_pivot_12"
+                {
+                    over "dress_12"
+                    {
+                        over "Mesh_007" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticRed> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+            }
+
+            over "wings_pivot"
+            {
+                over "wings_right"
+                {
+                    over "wing_right_1_pivot"
+                    {
+                        over "wing_right_1"
+                        {
+                            over "Mesh_031" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPink> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_2_pivot"
+                    {
+                        over "wing_right_2"
+                        {
+                            over "Mesh_030" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticRed> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_3_pivot"
+                    {
+                        over "wing_right_3"
+                        {
+                            over "Mesh_029" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticOrange> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_4_pivot"
+                    {
+                        over "wing_right_4"
+                        {
+                            over "Mesh_028" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticYellow> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_5_pivot"
+                    {
+                        over "wing_right_5"
+                        {
+                            over "Mesh_027" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticGreen> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_6_pivot"
+                    {
+                        over "wing_right_6"
+                        {
+                            over "Mesh_026" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticCyan> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_right_7_pivot"
+                    {
+                        over "wing_right_7"
+                        {
+                            over "Mesh_025" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPurple> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+                }
+
+                over "wings_left"
+                {
+                    over "wing_left_1_pivot"
+                    {
+                        over "wing_left_1"
+                        {
+                            over "Mesh_038" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPink> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_2_pivot"
+                    {
+                        over "wing_left_2"
+                        {
+                            over "Mesh_037" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticRed> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_3_pivot"
+                    {
+                        over "wing_left_3"
+                        {
+                            over "Mesh_036" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticOrange> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_4_pivot"
+                    {
+                        over "wing_left_4"
+                        {
+                            over "Mesh_035" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticYellow> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_5_pivot"
+                    {
+                        over "wing_left_5"
+                        {
+                            over "Mesh_034" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticGreen> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_6_pivot"
+                    {
+                        over "wing_left_6"
+                        {
+                            over "Mesh_033" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticCyan> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+
+                    over "wing_left_7_pivot"
+                    {
+                        over "wing_left_7"
+                        {
+                            over "Mesh_032" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/FairyPlasticPurple> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "lower"
+            {
+                over "legs_pivot"
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-0.00002022716580540873, 138.04917907714844, 0.000020249117369530722)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    over "leg_right"
+                    {
+                        over "foot_right_pivot"
+                        {
+                            over "foot_right"
+                            {
+                                over "Mesh_021" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/FairyPlasticPink> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+                            }
+                        }
+
+                        over "Mesh_023" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticRed> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+
+                    over "leg_left"
+                    {
+                        over "foot_left_pivot"
+                        {
+                            over "foot_left"
+                            {
+                                over "Mesh_022" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/FairyPlasticPink> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+                            }
+                        }
+
+                        over "Mesh_024" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/FairyPlasticRed> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def Material "FairyPlasticRed"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticRed/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (1, 0.14913142, 0) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 20
+        }
+    }
+
+    def Material "FairyPlasticOrange"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticOrange/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (274.40625, 80.71484)
+        int ui:nodegraph:node:stackingOrder = 1
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (1, 0.57810515, 0) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 22
+        }
+    }
+
+    def Material "FairyPlasticYellow"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticYellow/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (294.40625, 100.71484)
+        int ui:nodegraph:node:stackingOrder = 2
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0.99942404, 0.9855537, 0) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 24
+        }
+    }
+
+    def Material "FairyPlasticGreen"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticGreen/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (314.40625, 120.71484)
+        int ui:nodegraph:node:stackingOrder = 3
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0, 0.97680455, 0) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 27
+        }
+    }
+
+    def Material "FairyPlasticCyan"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticCyan/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (334.40625, 140.71484)
+        int ui:nodegraph:node:stackingOrder = 4
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0, 0.9914394, 1) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 29
+        }
+    }
+
+    def Material "FairyPlasticPurple"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticPurple/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (354.40625, 160.71484)
+        int ui:nodegraph:node:stackingOrder = 5
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0.581883, 0.21569154, 1) (
+                colorSpace = "srgb_texture"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 29
+        }
+    }
+
+    def Material "FairyPlasticPink"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticPink/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (374.40625, 180.71484)
+        int ui:nodegraph:node:stackingOrder = 6
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0.9633789, 0.32430777, 0.9358911) (
+                colorSpace = "srgb_displayp3"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 31
+        }
+    }
+
+    def Material "FairyPlasticSkin"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticSkin/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (394.40625, 200.71484)
+        int ui:nodegraph:node:stackingOrder = 7
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0.99215686, 0.88235295, 0.77254903) (
+                colorSpace = "srgb_displayp3"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 33
+        }
+    }
+
+    def Material "FairyPlasticHair"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticHair/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (414.40625, 220.71484)
+        int ui:nodegraph:node:stackingOrder = 8
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (458.8672, 45.45703)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (0.5176471, 0.24705882, 0.14901961) (
+                colorSpace = "srgb_displayp3"
+            )
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            bool inputs:hasPremultipliedAlpha
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
+            int ui:nodegraph:node:stackingOrder = 35
+        }
+    }
+}
+

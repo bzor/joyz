@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
+		<string>UIWindowSceneSessionRoleVolumetricApplication</string>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	<key>NSHandsTrackingUsageDescription</key>
+	<string>JoyzAVP uses hand tracking to let you interact with toys using your hands.</string>
+	<key>NSWorldSensingUsageDescription</key>
+	<string>JoyzAVP uses world sensing to let toys interact with your room surfaces.</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+
+# Build products
+DerivedData/
+build/
+
+# Reality Composer Pro user data
+*.rcuserdata
+
+# Blender backups
+*.blend1
