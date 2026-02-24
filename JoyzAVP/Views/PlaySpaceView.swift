@@ -19,8 +19,9 @@ struct PlaySpaceView: View {
             root.name = "PlaySpaceRoot"
             content.add(root)
 
-            // Make hand tracking available to ECS systems
+            // Make tracking data available to ECS systems
             HandTrackingManagerProvider.shared = handTracking
+            WorldTrackingManagerProvider.shared = arSession.worldTracking
 
             // Create debug hand markers
             handTracking.createDebugMarkers(parent: root)
@@ -57,6 +58,7 @@ struct PlaySpaceView: View {
         .onDisappear {
             arSession.stop()
             HandTrackingManagerProvider.shared = nil
+            WorldTrackingManagerProvider.shared = nil
         }
     }
 

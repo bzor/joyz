@@ -98,20 +98,26 @@ class HandTrackingManager {
     }
 
     /// Get the palm center position in world space for a given hand.
+    /// Midpoint between middleFingerMetacarpal (wrist end) and middleFingerKnuckle (MCP joint)
+    /// to approximate the true center of the palm.
     func palmPosition(_ chirality: HandAnchor.Chirality) -> SIMD3<Float>? {
         let anchor = chirality == .left ? leftHandAnchor : rightHandAnchor
         guard let anchor, anchor.isTracked,
-              let palm = anchor.handSkeleton?.joint(.middleFingerMetacarpal),
-              palm.isTracked else { return nil }
+              let metacarpal = anchor.handSkeleton?.joint(.middleFingerMetacarpal),
+              let knuckle = anchor.handSkeleton?.joint(.middleFingerKnuckle),
+              metacarpal.isTracked, knuckle.isTracked else { return nil }
 
-        let palmTransform = anchor.originFromAnchorTransform * palm.anchorFromJointTransform
-        return SIMD3<Float>(palmTransform.columns.3.x, palmTransform.columns.3.y, palmTransform.columns.3.z)
+        let metacarpalPos = anchor.originFromAnchorTransform * metacarpal.anchorFromJointTransform
+        let knucklePos = anchor.originFromAnchorTransform * knuckle.anchorFromJointTransform
+
+        let a = SIMD3<Float>(metacarpalPos.columns.3.x, metacarpalPos.columns.3.y, metacarpalPos.columns.3.z)
+        let b = SIMD3<Float>(knucklePos.columns.3.x, knucklePos.columns.3.y, knucklePos.columns.3.z)
+        return (a + b) * 0.5
     }
 
     /// Get the palm normal (direction the palm faces) in world space.
-    /// ARKit hand skeleton: for the metacarpal joint, the -Z axis typically
-    /// points outward from the palm when the hand is open and facing up.
-    /// We try -Z first, and fall back to Y if that doesn't work well.
+    /// ARKit mirrors joint coordinate frames between hands — -Y points out
+    /// from the palm on the right hand, +Y on the left.
     func palmNormal(_ chirality: HandAnchor.Chirality) -> SIMD3<Float>? {
         let anchor = chirality == .left ? leftHandAnchor : rightHandAnchor
         guard let anchor, anchor.isTracked,
@@ -119,9 +125,8 @@ class HandTrackingManager {
               palm.isTracked else { return nil }
 
         let palmTransform = anchor.originFromAnchorTransform * palm.anchorFromJointTransform
-        // Try -Z axis (common palm-facing direction in ARKit hand skeleton)
-        let negZ = -SIMD3<Float>(palmTransform.columns.2.x, palmTransform.columns.2.y, palmTransform.columns.2.z)
-        return negZ
+        let yAxis = SIMD3<Float>(palmTransform.columns.1.x, palmTransform.columns.1.y, palmTransform.columns.1.z)
+        return chirality == .left ? yAxis : -yAxis
     }
 }
 
@@ -131,4 +136,9 @@ class HandTrackingManager {
 /// which cannot receive injected dependencies.
 enum HandTrackingManagerProvider {
     @MainActor static var shared: HandTrackingManager?
+}
+
+/// Provides global access to the world tracking provider for head position queries.
+enum WorldTrackingManagerProvider {
+    @MainActor static var shared: WorldTrackingProvider?
 }

@@ -32,12 +32,24 @@
       }
     ]
   },
+  "55ADCAAA-16CF-4784-9E88-0EE96250BED7" : {
+    "objectMetadataList" : [
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "574E3EA2-6363-4254-BF36-E1DC120A87A6" : {
     "objectMetadataList" : [
       [
         "574E3EA2-6363-4254-BF36-E1DC120A87A6",
         "Root",
-        "FairyPlasticCyan"
+        "FairyPlasticYellow"
       ],
       {
         "isExpanded" : true,
@@ -55,79 +67,7 @@
       [
         "574E3EA2-6363-4254-BF36-E1DC120A87A6",
         "Root",
-        "Fairy"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "FairyPlasticGreen"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "FairyPlasticRed"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
         "FairyPlasticOrange"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "Fairy",
-        "fairy_001"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "FairyPlasticPink"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "FairyPlasticPurple"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
-        "Root",
-        "FairyPlasticHair"
       ],
       {
         "isExpanded" : true,
@@ -146,7 +86,79 @@
       [
         "574E3EA2-6363-4254-BF36-E1DC120A87A6",
         "Root",
-        "FairyPlasticYellow"
+        "FairyPlasticCyan"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "FairyPlasticPurple"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "FairyPlasticRed"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "FairyPlasticHair"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "FairyPlasticPink"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "Fairy"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "Fairy",
+        "fairy_001"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "574E3EA2-6363-4254-BF36-E1DC120A87A6",
+        "Root",
+        "FairyPlasticGreen"
       ],
       {
         "isExpanded" : true,
@@ -170,7 +182,8 @@
     "objectMetadataList" : [
       [
         "90C576A0-F90A-43B8-9998-14918A66F863",
-        "Root"
+        "Root",
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -178,8 +191,7 @@
       },
       [
         "90C576A0-F90A-43B8-9998-14918A66F863",
-        "Root",
-        "Sphere"
+        "Root"
       ],
       {
         "isExpanded" : true,
