@@ -60,6 +60,12 @@ struct WallBounceSystem: System {
 
         for entity in context.entities(matching: Self.query, updatingSystemWhen: .rendering) {
             guard var bounce = entity.components[BounceComponent.self] else { continue }
+
+            // Skip wall avoidance when debug Lissajous is driving position directly
+            if let fairy = entity.components[FairyBehaviorComponent.self], fairy.debugLissajous {
+                continue
+            }
+
             guard let scene = entity.scene else {
                 entity.position += bounce.velocity * dt
                 entity.components[BounceComponent.self] = bounce

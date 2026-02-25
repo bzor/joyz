@@ -115,6 +115,32 @@ class HandTrackingManager {
         return (a + b) * 0.5
     }
 
+    /// Get world-space positions of key hand joints (palm, fingertips, knuckles).
+    /// Returns all tracked joint positions for proximity checks.
+    func allJointPositions(_ chirality: HandAnchor.Chirality) -> [SIMD3<Float>] {
+        let anchor = chirality == .left ? leftHandAnchor : rightHandAnchor
+        guard let anchor, anchor.isTracked, let skeleton = anchor.handSkeleton else { return [] }
+
+        let joints: [HandSkeleton.JointName] = [
+            .middleFingerMetacarpal, .middleFingerKnuckle,
+            .middleFingerIntermediateBase, .middleFingerTip,
+            .indexFingerKnuckle, .indexFingerTip,
+            .ringFingerKnuckle, .ringFingerTip,
+            .littleFingerKnuckle, .littleFingerTip,
+            .thumbKnuckle, .thumbTip,
+            .wrist,
+        ]
+
+        var positions: [SIMD3<Float>] = []
+        for jointName in joints {
+            let joint = skeleton.joint(jointName)
+            guard joint.isTracked else { continue }
+            let worldTransform = anchor.originFromAnchorTransform * joint.anchorFromJointTransform
+            positions.append(SIMD3<Float>(worldTransform.columns.3.x, worldTransform.columns.3.y, worldTransform.columns.3.z))
+        }
+        return positions
+    }
+
     /// Get the palm normal (direction the palm faces) in world space.
     /// ARKit mirrors joint coordinate frames between hands — -Y points out
     /// from the palm on the right hand, +Y on the left.

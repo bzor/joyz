@@ -20,7 +20,8 @@ struct FairyMovementSystem: System {
             guard var fairy = entity.components[FairyBehaviorComponent.self],
                   var bounce = entity.components[BounceComponent.self],
                   let toy = entity.components[ToyComponent.self],
-                  toy.isActive else { continue }
+                  toy.isActive,
+                  !fairy.debugLissajous else { continue }
 
             fairy.totalTime += dt
 

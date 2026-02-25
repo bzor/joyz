@@ -10,7 +10,7 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Fairy", "FairyPlasticRed", "FairyPlasticOrange", "FairyPlasticYellow", "FairyPlasticGreen", "FairyPlasticCyan", "FairyPlasticPurple", "FairyPlasticPink", "FairyPlasticSkin", "FairyPlasticHair"]
+    reorder nameChildren = ["Fairy", "FairyPlasticRed", "FairyPlasticOrange", "FairyPlasticYellow", "FairyPlasticGreen", "FairyPlasticCyan", "FairyPlasticPurple", "FairyPlasticPink", "FairyPlasticSkin", "FairyPlasticHair", "FairyPlasticLegs"]
     def "Fairy" (
         active = true
         customData = {
@@ -151,8 +151,17 @@ def Xform "Root"
                         )
                     }
 
-                    over "hair_pivot"
+                    over "hair_pivot" (
+                        customData = {
+                            float3 rotationEulerHint = (-0.63480073, 7.8258275e-8, -3.3270847e-8)
+                        }
+                    )
                     {
+                        quatf xformOp:orient = (0.95005, -0.31209785, 4.2366512e-8, -3.592365e-9)
+                        float3 xformOp:scale = (1, 0.9999999, 0.9999999)
+                        double3 xformOp:translate = (-7.275957614183426e-12, 18.34393310546875, -3.637978807091713e-12)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                         over "hair"
                         {
                             over "Mesh_013" (
@@ -170,8 +179,22 @@ def Xform "Root"
 
             over "dress"
             {
-                over "dress_pivot_1"
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 265.0751647949219, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                over "dress_pivot_1" (
+                    customData = {
+                        float3 rotationEulerHint = (0.5647885, 3.1415904, 0)
+                    }
+                )
                 {
+                    quatf xformOp:orient = (9.884078e-7, 2.867849e-7, 0.960391, -0.2786559)
+                    float3 xformOp:scale = (1, 0.99999994, 0.99999994)
+                    double3 xformOp:translate = (6.6200482561876075e-15, 0.00002963540464406833, 11.684764862060547)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                     over "dress_1"
                     {
                         over "Mesh_006" (
@@ -202,8 +225,17 @@ def Xform "Root"
 
                 over "dress_pivot_3"
                 {
-                    over "dress_3"
+                    over "dress_3" (
+                        customData = {
+                            float3 rotationEulerHint = (-2.9802322e-8, -9.489302e-9, -7.501555e-11)
+                        }
+                    )
                     {
+                        quatf xformOp:orient = (1, -1.4901161e-8, -4.744649e-9, -3.7507775e-11)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-0.000003751357780856779, -228.93141174316406, -0.00000762939453125)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                         over "Mesh_004" (
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
@@ -215,8 +247,17 @@ def Xform "Root"
                     }
                 }
 
-                over "dress_pivot_4"
+                over "dress_pivot_4" (
+                    customData = {
+                        float3 rotationEulerHint = (-0.5647886, 4.712389, 0)
+                    }
+                )
                 {
+                    quatf xformOp:orient = (0.67909896, 0.19703948, -0.679099, 0.19703948)
+                    float3 xformOp:scale = (1, 0.99999994, 0.99999994)
+                    double3 xformOp:translate = (11.684764862060547, 0.000030517578125, 1.8189894035458565e-12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                     over "dress_4"
                     {
                         over "Mesh_003" (
@@ -230,8 +271,17 @@ def Xform "Root"
                     }
                 }
 
-                over "dress_pivot_5"
+                over "dress_pivot_5" (
+                    customData = {
+                        float3 rotationEulerHint = (0.5647778, 5.235987, 0)
+                    }
+                )
                 {
+                    quatf xformOp:orient = (0.8317243, 0.2413186, -0.48019633, 0.13932538)
+                    float3 xformOp:scale = (0.99999994, 0.9999999, 0.99999976)
+                    double3 xformOp:translate = (10.119303703308105, 0.00003095866850344464, -5.842382431030273)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                     over "dress_5"
                     {
                         over "Mesh_002" (
@@ -245,8 +295,17 @@ def Xform "Root"
                     }
                 }
 
-                over "dress_pivot_6"
+                over "dress_pivot_6" (
+                    customData = {
+                        float3 rotationEulerHint = (0.5647778, 5.7595863, 1.720638e-8)
+                    }
+                )
                 {
+                    quatf xformOp:orient = (0.9276679, 0.26915592, -0.24856795, 0.072120145)
+                    float3 xformOp:scale = (1, 0.9999998, 0.9999999)
+                    double3 xformOp:translate = (5.842382431030273, 0.00003128156458842568, -10.119303703308105)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                     over "dress_6"
                     {
                         over "Mesh_001" (
@@ -445,10 +504,28 @@ def Xform "Root"
                         }
                     }
 
-                    over "wing_right_7_pivot"
+                    over "wing_right_7_pivot" (
+                        customData = {
+                            float3 rotationEulerHint = (1.9073484e-8, -0.3490659, 4.7683724e-8)
+                        }
+                    )
                     {
-                        over "wing_right_7"
+                        quatf xformOp:orient = (0.9848077, 1.3531954e-8, -0.1736482, 2.5135689e-8)
+                        float3 xformOp:scale = (100, 100.00002, 100.000015)
+                        double3 xformOp:translate = (0.000011444091796875, 0.000017642974853515625, -0.0000133514404296875)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        over "wing_right_7" (
+                            customData = {
+                                float3 rotationEulerHint = (-3.0954516, -0.94947577, -0.08973553)
+                            }
+                        )
                         {
+                            quatf xformOp:orient = (1.8442987e-7, 0.88875395, -0.029347818, 0.45744416)
+                            float3 xformOp:scale = (0.01, 0.009999999, 0.009999999)
+                            double3 xformOp:translate = (-5.960464477539063e-8, 3.3993273973464966e-7, -3.5762786865234375e-7)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
                             over "Mesh_025" (
                                 prepend apiSchemas = ["MaterialBindingAPI"]
                             )
@@ -576,7 +653,7 @@ def Xform "Root"
                 {
                     quatf xformOp:orient = (1, 0, 0, 0)
                     float3 xformOp:scale = (1, 1, 1)
-                    double3 xformOp:translate = (-0.00002022716580540873, 138.04917907714844, 0.000020249117369530722)
+                    double3 xformOp:translate = (-0.00002022716580540873, 48.04917907714844, 0.000020249117369530722)
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                     over "leg_right"
@@ -600,7 +677,7 @@ def Xform "Root"
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
-                            rel material:binding = </Root/FairyPlasticRed> (
+                            rel material:binding = </Root/FairyPlasticLegs> (
                                 bindMaterialAs = "weakerThanDescendants"
                             )
                         }
@@ -627,7 +704,7 @@ def Xform "Root"
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
-                            rel material:binding = </Root/FairyPlasticRed> (
+                            rel material:binding = </Root/FairyPlasticLegs> (
                                 bindMaterialAs = "weakerThanDescendants"
                             )
                         }
@@ -656,7 +733,7 @@ def Xform "Root"
             float inputs:roughness = 0.35
             token outputs:out
             float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
-            int ui:nodegraph:node:stackingOrder = 20
+            int ui:nodegraph:node:stackingOrder = 21
         }
     }
 
@@ -857,6 +934,87 @@ def Xform "Root"
             token outputs:out
             float2 ui:nodegraph:node:pos = (111.69531, 76.71484)
             int ui:nodegraph:node:stackingOrder = 35
+        }
+    }
+
+    def Material "FairyPlasticLegs"
+    {
+        token outputs:mtlx:surface.connect = </Root/FairyPlasticLegs/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (274.40625, 80.71484)
+        int ui:nodegraph:node:stackingOrder = 1
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (561.6758, 41.757812)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 25
+
+        def Shader "PBRSurface"
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            color3f inputs:baseColor = (1, 0.14913142, 0) (
+                colorSpace = "srgb_texture"
+            )
+            color3f inputs:baseColor.connect = </Root/FairyPlasticLegs/RampVertical.outputs:out>
+            float inputs:clearcoat = 0.5
+            float3 inputs:clearcoatNormal
+            color3f inputs:emissiveColor
+            bool inputs:hasPremultipliedAlpha
+            float3 inputs:normal
+            float inputs:roughness = 0.35
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (105.42969, 72.57422)
+            int ui:nodegraph:node:stackingOrder = 28
+        }
+
+        def Shader "TextureCoordinates"
+        {
+            uniform token info:id = "ND_texcoord_vector2"
+            float2 outputs:out
+            float2 ui:nodegraph:node:pos = (-679.40625, 143.42578)
+            int ui:nodegraph:node:stackingOrder = 60
+        }
+
+        def Shader "ConstantColor3"
+        {
+            uniform token info:id = "ND_constant_color3"
+            color3f inputs:value = (1, 0, 0) (
+                colorSpace = "lin_srgb"
+            )
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (-607.6406, -76.96094)
+            int ui:nodegraph:node:stackingOrder = 53
+        }
+
+        def Shader "RampVertical"
+        {
+            uniform token info:id = "ND_ramptb_color3"
+            float2 inputs:texcoord.connect = </Root/FairyPlasticLegs/Multiply.outputs:out>
+            color3f inputs:valueb.connect = </Root/FairyPlasticLegs/ConstantColor3_1.outputs:out>
+            color3f inputs:valuet.connect = </Root/FairyPlasticLegs/ConstantColor3.outputs:out>
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (-305.70703, 7.9296875)
+            int ui:nodegraph:node:stackingOrder = 57
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:valuet"]
+        }
+
+        def Shader "ConstantColor3_1"
+        {
+            uniform token info:id = "ND_constant_color3"
+            color3f inputs:value = (1, 1, 0) (
+                colorSpace = "lin_srgb"
+            )
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (-585.8164, 18.71875)
+            int ui:nodegraph:node:stackingOrder = 55
+        }
+
+        def Shader "Multiply"
+        {
+            uniform token info:id = "ND_multiply_vector2"
+            float2 inputs:in1.connect = </Root/FairyPlasticLegs/TextureCoordinates.outputs:out>
+            float2 inputs:in2 = (1, 1.2)
+            float2 inputs:in2.connect = None
+            float2 outputs:out
+            float2 ui:nodegraph:node:pos = (-408.5547, 135.88281)
+            int ui:nodegraph:node:stackingOrder = 74
         }
     }
 }

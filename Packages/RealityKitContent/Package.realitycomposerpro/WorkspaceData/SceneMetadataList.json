@@ -36,7 +36,55 @@
     "objectMetadataList" : [
       [
         "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root",
+        "Fairy",
+        "fairy_001"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root",
+        "FairyPlasticLegs"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root",
+        "Fairy",
+        "fairy_001",
+        "lower"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root",
+        "Fairy"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "55ADCAAA-16CF-4784-9E88-0EE96250BED7",
+        "Root",
+        "FairyPlasticRed"
       ],
       {
         "isExpanded" : true,

@@ -87,7 +87,12 @@ struct PlaySpaceView: View {
 
         // Attach ECS components for fairy behavior
         fairyRoot.components.set(ToyComponent(toyType: .fairy, isActive: true))
-        fairyRoot.components.set(FairyBehaviorComponent())
+        var fairyBehavior = FairyBehaviorComponent()
+        #if targetEnvironment(simulator)
+        fairyBehavior.debugLissajous = true
+        print("[Debug] Simulator detected — fairy using Lissajous flight path")
+        #endif
+        fairyRoot.components.set(fairyBehavior)
         fairyRoot.components.set(BounceComponent())
         fairyRoot.components.set(TrailEmitterComponent())
 

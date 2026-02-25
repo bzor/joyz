@@ -17,7 +17,14 @@ enum SystemRegistration {
 
         // Systems
         FairyMovementSystem.registerSystem()
+        DebugLissajousSystem.registerSystem()
         WallBounceSystem.registerSystem()
+        WingFlapSystem.registerSystem()
+        HairSpringSystem.registerSystem()
+        DressSwaySystem.registerSystem()
+        ArmSwaySystem.registerSystem()
+        LegSwaySystem.registerSystem()
+        FootFlutterSystem.registerSystem()
         HandInteractionSystem.registerSystem()
         TrailSpawnerSystem.registerSystem()
         TrailLifecycleSystem.registerSystem()
