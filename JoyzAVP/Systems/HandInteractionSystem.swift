@@ -38,7 +38,9 @@ struct HandInteractionSystem: System {
         for entity in context.entities(matching: Self.fairyQuery, updatingSystemWhen: .rendering) {
             guard var fairy = entity.components[FairyBehaviorComponent.self] else { continue }
 
-            let fairyPos = entity.position(relativeTo: nil)
+            // Offset detection point downward to the fairy's feet/legs area
+            let legOffset: Float = 0.12
+            let fairyPos = entity.position(relativeTo: nil) - SIMD3(0, legOffset, 0)
 
             // Find closest joint distance
             var closestDist: Float = 10.0

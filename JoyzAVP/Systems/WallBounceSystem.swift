@@ -66,6 +66,14 @@ struct WallBounceSystem: System {
                 continue
             }
 
+            // Count down launch grace timer
+            var inLaunchGrace = false
+            if var fairy = entity.components[FairyBehaviorComponent.self], fairy.launchTimer > 0 {
+                fairy.launchTimer -= dt
+                entity.components[FairyBehaviorComponent.self] = fairy
+                inLaunchGrace = true
+            }
+
             guard let scene = entity.scene else {
                 entity.position += bounce.velocity * dt
                 entity.components[BounceComponent.self] = bounce
@@ -73,6 +81,13 @@ struct WallBounceSystem: System {
             }
 
             let origin = entity.position(relativeTo: nil)
+
+            // During launch grace, skip all avoidance — just apply velocity
+            if inLaunchGrace {
+                entity.position += bounce.velocity * dt
+                entity.components[BounceComponent.self] = bounce
+                continue
+            }
 
             // Accumulate avoidance force from all nearby surfaces
             var avoidance = SIMD3<Float>.zero
@@ -143,6 +158,43 @@ struct WallBounceSystem: System {
                             ? simd_normalize(SIMD3<Float>(bounce.velocity.x, 0, bounce.velocity.z))
                             : SIMD3<Float>(1, 0, 0)
                         bounce.velocity += escape * force * dt
+                    }
+                }
+            }
+
+            // Toybox volume avoidance — treat as a solid box
+            if let boxCenter = AppModel.toyboxAvoidanceCenter,
+               let fairy = entity.components[FairyBehaviorComponent.self],
+               !fairy.debugLissajous {
+                let halfExt = AppModel.toyboxAvoidanceHalfExtents
+                let margin: Float = 0.15  // start pushing at this distance from the box surface
+
+                // Signed distance from fairy to box surface on each axis
+                let rel = origin - boxCenter
+                let dx = abs(rel.x) - halfExt.x
+                let dy = abs(rel.y) - halfExt.y
+                let dz = abs(rel.z) - halfExt.z
+
+                // If within margin on all axes, fairy is near or inside the box
+                if dx < margin && dy < margin && dz < margin {
+                    // Find the closest face and push outward along that axis
+                    let axes: [(Float, SIMD3<Float>)] = [
+                        (dx, SIMD3(rel.x > 0 ? 1 : -1, 0, 0)),
+                        (dy, SIMD3(0, rel.y > 0 ? 1 : -1, 0)),
+                        (dz, SIMD3(0, 0, rel.z > 0 ? 1 : -1)),
+                    ]
+                    for (dist, dir) in axes {
+                        if dist < margin {
+                            let proximity = 1.0 - (max(dist, 0) / margin)
+                            let force = proximity * proximity * 3.0
+                            bounce.velocity += dir * force * dt
+
+                            // Cancel inward velocity component
+                            let inward = -simd_dot(bounce.velocity, dir)
+                            if inward > 0 {
+                                bounce.velocity += dir * inward * proximity
+                            }
+                        }
                     }
                 }
             }

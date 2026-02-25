@@ -19,6 +19,8 @@ struct FairyBehaviorComponent: Component {
     /// Proximity influence range (meters)
     var handInfluenceRange: Float = 0.5
     var totalTime: Float = 0
+    /// Grace period after launch — skips avoidance so she can fly straight up
+    var launchTimer: Float = 0
 
     /// Accumulated wing flap phase (incremented by WingFlapSystem each frame)
     var wingFlapPhase: Float = 0

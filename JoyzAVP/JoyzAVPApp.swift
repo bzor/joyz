@@ -21,7 +21,7 @@ struct JoyzAVPApp: App {
                 .environment(appModel)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 0.4, height: 0.4, depth: 0.4, in: .meters)
+        .defaultSize(width: 0.4, height: 0.6, depth: 0.6, in: .meters)
 
         ImmersiveSpace(id: "PlaySpace") {
             PlaySpaceView()

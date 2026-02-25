@@ -11,6 +11,11 @@
 		<key>UISceneConfigurations</key>
 		<dict/>
 	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
 	<key>NSHandsTrackingUsageDescription</key>
 	<string>JoyzAVP uses hand tracking to let you interact with toys using your hands.</string>
 	<key>NSWorldSensingUsageDescription</key>
